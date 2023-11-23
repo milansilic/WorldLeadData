@@ -83,6 +83,8 @@ window.onscroll = () => window.scrollY > 100 ? nav.classList.add('scr') : nav.cl
 
 
 // IO
+const io3Arts = [...document.querySelectorAll('.io3>div>article')].forEach((ar,i) => ar.style.transitionDelay = `.${i}s`);
+
 let zones = [document.querySelector('header'), ...document.querySelectorAll('main section'), document.querySelector('footer')];
 
 let options = {
@@ -102,8 +104,8 @@ let callback = (entries) => {
             }
          } else {                                  // enters from bottom
             switch (true) {
-               case cls.contains('io3'):
-                  console.log('aaa');
+               case cls.contains('io4'):
+                  document.querySelector('.io3>div').classList.add('show');
                   break;
             }
          }
@@ -113,6 +115,7 @@ let callback = (entries) => {
                case cls.contains('io1'):
                   nav.classList.add('paint');
                   break;
+               
             }
          } else {                                  // exit bottom
          }

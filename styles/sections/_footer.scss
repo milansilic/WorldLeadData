@@ -1,3 +1,17 @@
+@import '../base/variables';
+
 footer {
    scroll-snap-align: start;
+   height: 30vh;
+   background-color: var(--col-main);
+
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   align-items: center;
+
+   small {
+      color: #fff;
+      font-family: 'Mona-Sans';
+   }
 }
