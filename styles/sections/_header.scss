@@ -1,0 +1,96 @@
+@import '../base/variables';
+
+nav {
+   border-top: 2.4rem solid transparent;
+   width: 100%;
+   height: 10rem;
+   position: fixed;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   align-items: center;
+   padding: 0 2vw 0 3vw;
+   z-index: 2;
+   transition: .2s ease-out, background-color 1s;
+
+   &.paint {
+      background-color: var(--col-main-light);
+   }
+
+   picture {
+      display: block;
+      width: 12vw;
+      transition: transform .2s ease-out;
+
+      img {
+         display: block;
+         width: 100%;
+         -webkit-filter: drop-shadow(3px 3px 3px rgba(0,0,0, 0.4));
+         filter: drop-shadow(3px 3px 3px rgba(0,0,0, 0.4));
+      }
+   }
+
+   ul {
+      display: flex;
+
+      li {
+         padding: 1vw 2.5vw .9vw;
+         color: #fff;
+         font-family: var(--fontFam);
+         font-size: .9rem;
+         text-transform: uppercase;
+         letter-spacing: .1rem;
+         transition: padding .2s ease-out;
+         cursor: pointer;
+      }
+   }
+
+   &.scr {
+      padding: 0 1.2vw 0 1.8vw;
+      transform: translateY(-2.4rem);
+
+      picture {
+         transform: scale(.75);
+      }
+
+      ul li {
+         padding: .9vw 2.2vw .8vw;
+      }
+   }
+}
+
+header {
+   scroll-snap-align: start;
+   height: 100vh;
+   position: relative;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background-image: linear-gradient(150deg, var(--col-main) 10%, var(--col-main-light) 40%, var(--col-main-light) 60%, var(--col-main) 100%);
+
+   #buttons {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+
+      button {
+         cursor: pointer;
+      }
+   }
+}
+
+h1 {
+   color: var(--col-heading);
+   font-size: 4.8vw;
+   font-family: var(--fontFam);
+   text-transform: capitalize;
+   text-align: center;
+
+   @media screen and (min-width: 1280px) {
+      font-size: 3.8vw;
+   }
+
+   @media screen and (min-width: 2160px) {
+      font-size: 2.8vw;
+   }
+}

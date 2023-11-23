@@ -1,0 +1,72 @@
+@import '../base/variables';
+
+main section {
+   border: px solid red;
+   scroll-snap-align: start;
+   height: 100vh;
+   padding: 18vh 16vw 0;
+
+   h2 {
+      margin-bottom: 6vh;
+      color: var(--col-main);
+      font-size: 2rem;
+      font-family: var(--fontFam);
+      text-align: center;
+      text-transform: capitalize;
+      letter-spacing: .05rem;
+   }
+
+   div {
+      border: px solid lime;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2vw;
+   }
+
+   article {
+      padding: 2vw;
+
+      hgroup {
+         display: flex;
+         align-items: center;
+         margin-bottom: 1.6vh;
+
+         span {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            width: 62px;
+            height: 62px;
+            background-color: var(--col-main);
+            margin-right: 2rem;
+
+            img {
+               display: block;
+               width: 60%;
+            }
+         }
+
+         h3 {
+            color: var(--col-main);
+            font-family: var(--fontFam);
+            text-decoration: underline;
+            text-transform: uppercase;
+            letter-spacing: 0.06rem;
+         }
+      }
+
+      li {
+         color: #000;
+         font-family: var(--fontFamText);
+         font-size: 1.25rem;
+         letter-spacing: -0.02rem;
+         margin-bottom: 1vh;
+      }
+
+      &:nth-of-type(1) hgroup span img {width: 50%;}
+      &:nth-of-type(2) hgroup span img {width: 65%;}
+      &:nth-of-type(4) hgroup span img {width: 70%;}
+
+   }
+}
