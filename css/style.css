@@ -126,23 +126,50 @@ main section h2 {
   text-transform: capitalize;
   letter-spacing: 0.05rem;
 }
-main section div {
+main section .aboutus {
+  border: px solid red;
+  display: grid;
+  grid-template-columns: 68rem;
+  gap: 6vh 1rem;
+  justify-content: center;
+}
+main section .aboutus h3 {
+  margin-bottom: 1.2vh;
+  color: var(--col-main);
+  font-family: var(--fontFam);
+  text-transform: uppercase;
+  text-decoration: underline;
+  letter-spacing: 0.06rem;
+}
+main section .aboutus p {
+  color: #000;
+  font-family: var(--fontFamText);
+  font-size: 1.375rem;
+  line-height: 1.5;
+}
+main section .aboutus p span {
+  color: #777;
+  font-family: var(--fontFamText);
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+main section .services {
   display: grid;
   grid-template-columns: 34rem 34rem;
   gap: 12vh 1rem;
   justify-content: center;
 }
-main section article {
+main section .services article {
   opacity: 0;
   transition: transform 0.5s ease-out, opacity 0.6s ease-out;
 }
-main section article hgroup {
+main section .services article hgroup {
   display: flex;
   align-items: center;
   padding-left: 0.9rem;
   margin-bottom: 2.2vh;
 }
-main section article hgroup span {
+main section .services article hgroup span {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -152,43 +179,43 @@ main section article hgroup span {
   background-color: var(--col-main);
   margin-right: 2rem;
 }
-main section article hgroup span img {
+main section .services article hgroup span img {
   display: block;
   width: 60%;
 }
-main section article hgroup h3 {
+main section .services article hgroup h3 {
   color: var(--col-main);
   font-family: var(--fontFam);
   text-decoration: underline;
   text-transform: uppercase;
   letter-spacing: 0.06rem;
 }
-main section article li {
+main section .services article li {
   color: #000;
   font-family: var(--fontFamText);
   font-size: 1.25rem;
   letter-spacing: -0.02rem;
   margin-bottom: 1vh;
 }
-main section article:nth-of-type(1) {
+main section .services article:nth-of-type(1) {
   transform: translate(10rem, 5rem);
 }
-main section article:nth-of-type(1) hgroup span img {
+main section .services article:nth-of-type(1) hgroup span img {
   width: 50%;
 }
-main section article:nth-of-type(2) {
+main section .services article:nth-of-type(2) {
   transform: translate(10rem, 7rem);
 }
-main section article:nth-of-type(2) hgroup span img {
+main section .services article:nth-of-type(2) hgroup span img {
   width: 65%;
 }
-main section article:nth-of-type(3) {
+main section .services article:nth-of-type(3) {
   transform: translate(12rem, 5rem);
 }
-main section article:nth-of-type(4) {
+main section .services article:nth-of-type(4) {
   transform: translate(12rem, 7rem);
 }
-main section article:nth-of-type(4) hgroup span img {
+main section .services article:nth-of-type(4) hgroup span img {
   width: 70%;
 }
 main section div.show article {
