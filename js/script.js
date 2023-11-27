@@ -23,7 +23,7 @@ document.getElementById('headline-btn').onclick = () => {
 // COLORS
 let c = 0;
 let colors = [
-   { frst: '#d44d5c', frstL: '#d44d5c', sec: 'purple', heading: 'white' },
+   { frst: '#d44d5c', frstL: '#d44d5c', sec: '#C02E3E', monoc: '#C02E3E', compl: '#4DD4C5', complOfMonoc: '#2EC0B0', heading: 'white' },
    { frst: '#1d1647', frstL: '#312c66', sec: 'orange', heading: '#fbfbfb' },
    { frst: '#003d7d', frstL: '#034994', sec: 'purple', heading: 'white' },
    { frst: '#153875', frstL: '#1e4588', sec: 'purple', heading: 'white' },
@@ -34,6 +34,9 @@ let setColor = () => {
    doc.style.setProperty("--col-main", colors[c].frst);
    doc.style.setProperty("--col-main-light", colors[c].frstL);
    doc.style.setProperty("--col-sec", colors[c].sec);
+   doc.style.setProperty("--col-monoc", colors[c].monoc);
+   doc.style.setProperty("--col-compl", colors[c].compl);
+   doc.style.setProperty("--col-complOfMonoc", colors[c].complOfMonoc);
    doc.style.setProperty("--col-heading", colors[c].heading);
 }
 setColor();

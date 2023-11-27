@@ -2,15 +2,26 @@
 
 footer {
    scroll-snap-align: start;
-   height: 30vh;
    background-color: var(--col-main);
-
    display: flex;
    flex-wrap: wrap;
    justify-content: center;
    align-items: center;
+   flex-direction: column;
+   padding: 12vh 0 10vh;
 
-   small {
+   p { border: px solid yellow;
+      width: 50ch;
+      margin-bottom: 10vh;
+      color: #fff;
+      font-family: var(--fontFamText);
+      font-size: 1.750rem;
+      font-style: italic;
+      word-spacing: .1em;
+      line-height: 1.5;
+   }
+
+   small { border: px solid green;
       color: #fff;
       font-family: 'Mona-Sans';
    }

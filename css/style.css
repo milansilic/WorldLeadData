@@ -112,6 +112,7 @@ h1 {
 }
 
 main section {
+  background-image: radial-gradient(#ffffff, #fefefe);
   scroll-snap-align: start;
   height: 100vh;
   padding: 18vh 16vw 0;
@@ -127,28 +128,43 @@ main section h2 {
   letter-spacing: 0.05rem;
 }
 main section .aboutus {
-  border: px solid red;
+  border: px dashed red;
+  padding: 0 22vw;
   display: grid;
-  grid-template-columns: 68rem;
-  gap: 6vh 1rem;
-  justify-content: center;
+  grid-template-columns: 10% 80% 10%;
+  gap: 6vh;
 }
-main section .aboutus h3 {
+main section .aboutus article {
+  border: px solid rebeccapurple;
+}
+main section .aboutus article:nth-of-type(odd) {
+  grid-column: 1/span 2;
+}
+main section .aboutus article:nth-of-type(even) {
+  grid-column: 2/span 2;
+}
+main section .aboutus h4 {
+  border: px solid dodgerblue;
   margin-bottom: 1.2vh;
-  color: var(--col-main);
+  color: var(--col-monoc);
   font-family: var(--fontFam);
+  font-size: 1.063rem;
   text-transform: uppercase;
-  text-decoration: underline;
-  letter-spacing: 0.06rem;
+  letter-spacing: 0.04em;
+  word-spacing: 0.05em;
 }
 main section .aboutus p {
+  border: px solid lime;
   color: #000;
   font-family: var(--fontFamText);
   font-size: 1.375rem;
+  letter-spacing: 0.03em;
+  word-spacing: 0.05em;
   line-height: 1.5;
 }
 main section .aboutus p span {
-  color: #777;
+  color: var(--col-compl);
+  color: var(--col-complOfMonoc);
   font-family: var(--fontFamText);
   font-size: 1.5rem;
   font-weight: 900;
@@ -176,7 +192,7 @@ main section .services article hgroup span {
   border-radius: 50%;
   width: 62px;
   height: 62px;
-  background-color: var(--col-main);
+  background-color: var(--col-monoc);
   margin-right: 2rem;
 }
 main section .services article hgroup span img {
@@ -186,6 +202,7 @@ main section .services article hgroup span img {
 main section .services article hgroup h3 {
   color: var(--col-main);
   font-family: var(--fontFam);
+  font-size: 1.25rem;
   text-decoration: underline;
   text-transform: uppercase;
   letter-spacing: 0.06rem;
@@ -240,14 +257,27 @@ main section div.show article:nth-of-type(4) {
 
 footer {
   scroll-snap-align: start;
-  height: 30vh;
   background-color: var(--col-main);
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  padding: 12vh 0 10vh;
+}
+footer p {
+  border: px solid yellow;
+  width: 50ch;
+  margin-bottom: 10vh;
+  color: #fff;
+  font-family: var(--fontFamText);
+  font-size: 1.75rem;
+  font-style: italic;
+  word-spacing: 0.1em;
+  line-height: 1.5;
 }
 footer small {
+  border: px solid green;
   color: #fff;
   font-family: "Mona-Sans";
 }/*# sourceMappingURL=style.css.map */
