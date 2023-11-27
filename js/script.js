@@ -14,10 +14,10 @@ let headlines = [
 
 headline.innerHTML = headlines[h];
 
-document.getElementById('headline-btn').onclick = () => {
-   h < headlines.length - 1 ? h++ : h = 0;
-   headline.innerHTML = headlines[h];
-}
+// document.getElementById('headline-btn').onclick = () => {
+//    h < headlines.length - 1 ? h++ : h = 0;
+//    headline.innerHTML = headlines[h];
+// }
 
 
 // COLORS
@@ -41,10 +41,10 @@ let setColor = () => {
 }
 setColor();
 
-document.getElementById('colors-btn').onclick = () => {
-   c < colors.length - 1 ? c++ : c = 0;
-   setColor();
-}
+// document.getElementById('colors-btn').onclick = () => {
+//    c < colors.length - 1 ? c++ : c = 0;
+//    setColor();
+// }
 
 
 // FONTS
@@ -56,10 +56,10 @@ let fonts = [
 
 doc.style.setProperty("--fontFam", fonts[f]);
 
-document.getElementById('fonts-btn').onclick = () => {
-   f < fonts.length - 1 ? f++ : f = 0;
-   doc.style.setProperty("--fontFam", fonts[f]);
-}
+// document.getElementById('fonts-btn').onclick = () => {
+//    f < fonts.length - 1 ? f++ : f = 0;
+//    doc.style.setProperty("--fontFam", fonts[f]);
+// }
 
 
 // LOGO
@@ -74,10 +74,10 @@ let logos = [
 
 logoImg.src = logos[l];
 
-document.getElementById('logo-btn').onclick = () => {
-   l < logos.length - 1 ? l++ : l = 0;
-   logoImg.src = logos[l];
-}
+// document.getElementById('logo-btn').onclick = () => {
+//    l < logos.length - 1 ? l++ : l = 0;
+//    logoImg.src = logos[l];
+// }
 
 
 // NAV

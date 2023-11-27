@@ -17,9 +17,9 @@ nav {
       background-color: var(--col-main-light);
    }
 
-   picture {
+   picture { border: px solid yellow;
       display: block;
-      width: 12vw;
+      width: 18vw;
       transition: transform .2s ease-out;
 
       img {

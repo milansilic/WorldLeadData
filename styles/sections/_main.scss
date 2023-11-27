@@ -8,7 +8,7 @@ main section {
    padding: 18vh 0vw 0;
 
    h2 {
-      margin-bottom: 11vh;
+      margin-bottom: 8vh;
       color: var(--col-main);
       font-size: 2rem;
       font-family: var(--fontFam);
@@ -18,24 +18,29 @@ main section {
    }
 
    .aboutus { border: px dashed red;
-      padding: 0 22vw;
+      padding: 0 19vw 0 25vw;
       display: grid;
-      grid-template-columns: 10% 80% 10%;
-      gap: 6vh;
+      grid-template-columns: 12% 12% 52% 12% 12%;
+      gap: 7vh 0;
 
-      article { border: px solid rebeccapurple;         
+      article { border: px solid green;
+
       }
 
-      article:nth-of-type(odd) {
-         grid-column: 1 / span 2;
+      article:nth-of-type(1) {
+         grid-column: 1 / span 3;
       }
 
-      article:nth-of-type(even) {
-         grid-column: 2 / span 2;
+      article:nth-of-type(2) {
+         grid-column: 2 / span 3;
       }
 
-      h4 { border: px solid dodgerblue;
-         margin-bottom: 1.2vh;
+      article:nth-of-type(3) {
+         grid-column: 3 / span 3;
+      }
+
+      h4 {
+         margin-bottom: .7vh;
          color: var(--col-monoc);
          font-family: var(--fontFam);
          font-size: 1.063rem;
@@ -47,7 +52,7 @@ main section {
       p { border: px solid lime;
          color: #000;
          font-family: var(--fontFamText);
-         font-size: 1.375rem;
+         font-size: 1.313rem;
          letter-spacing: .03em;
          word-spacing: .05em;
          line-height: 1.5;
@@ -56,7 +61,7 @@ main section {
             color: var(--col-compl);
             color: var(--col-complOfMonoc);
             font-family: var(--fontFamText);
-            font-size: 1.5rem;
+            font-size: 1.438rem;
             font-weight: 900;
          }
       }
