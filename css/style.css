@@ -12,11 +12,16 @@ html, body {
   scroll-snap-type: y proximity;
 }
 
+img {
+  display: block;
+}
+
 :root {
   --fontFamText: "Mona-Sans";
 }
 
-h1, h2 {
+h1,
+h2 {
   font-family: var(--fontFam);
   text-align: center;
   text-transform: capitalize;
@@ -43,6 +48,41 @@ h2 {
   font-size: clamp(1.2rem, 1.667vw, 1.667vw);
   text-shadow: 0px 0px 20px #fff;
   letter-spacing: 0.05em;
+}
+
+h3,
+h4,
+h6 {
+  font-family: var(--fontFam);
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: 1.063rem;
+  font-size: clamp(1.063rem, 1.042vw, 1.042vw);
+  letter-spacing: 0.06rem;
+}
+
+h4 {
+  font-size: 1rem;
+  font-size: clamp(1rem, 0.885vw, 0.885vw);
+  letter-spacing: 0.04em;
+  word-spacing: 0.05em;
+}
+
+h6 {
+  font-size: 1rem;
+  font-size: clamp(1rem, 0.833vw, 0.833vw);
+  letter-spacing: 0.04em;
+  word-spacing: 0.05em;
+  text-transform: lowercase;
+}
+
+p,
+li,
+dd {
+  color: #000;
+  font-family: var(--fontFamText);
 }
 
 :root {
@@ -77,18 +117,15 @@ nav.scr ul li {
   padding: 0.9vw 2.2vw 0.8vw;
 }
 nav picture {
-  border: px solid yellow;
   width: 18vw;
   transition: transform 0.2s ease-out;
 }
 nav picture img {
-  display: block;
   width: 100%;
   -webkit-filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.4));
   filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.4));
 }
 nav ul {
-  border: px solid yellow;
   display: flex;
 }
 nav ul li {
@@ -141,67 +178,57 @@ main section h2 {
   margin-top: auto;
 }
 
-div.aboutus {
+.about-us {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-div.aboutus article {
+.about-us article {
   margin-bottom: 3vw;
   opacity: 0;
   transform: translate(4vw, 2vw);
   transition: 0;
   transition-delay: 0;
 }
-div.aboutus article:nth-of-type(1) {
+.about-us article:nth-of-type(1) {
   margin-left: -4vw;
 }
-div.aboutus article:nth-of-type(2) {
+.about-us article:nth-of-type(2) {
   margin-left: 1vw;
 }
-div.aboutus article:nth-of-type(3) {
+.about-us article:nth-of-type(3) {
   margin-left: 6vw;
 }
-div.aboutus.show article {
-  opacity: 1;
+.about-us.show article {
   transform: translate(0, 0);
-  transition: transform 0.38s ease-out, opacity 0.8s ease-out;
 }
-div.aboutus.show article:nth-of-type(1) {
+.about-us.show article:nth-of-type(1) {
   transition-delay: 0.02s;
 }
-div.aboutus.show article:nth-of-type(2) {
+.about-us.show article:nth-of-type(2) {
   transition-delay: 0.32s;
 }
-div.aboutus.show article:nth-of-type(3) {
+.about-us.show article:nth-of-type(3) {
   transition-delay: 0.6s;
 }
-div.aboutus h4 {
+.about-us h4 {
   margin-bottom: 0.7vh;
   color: var(--col-monoc);
-  font-family: var(--fontFam);
-  font-size: 1rem;
-  font-size: clamp(1rem, 0.885vw, 0.885vw);
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  word-spacing: 0.05em;
 }
-div.aboutus h4 span {
+.about-us h4 span {
   font-size: 1.125rem;
   font-size: clamp(1.125rem, 0.938vw, 0.938vw);
 }
-div.aboutus p {
+.about-us p {
   width: 64ch;
-  color: #000;
-  font-family: var(--fontFamText);
   font-size: 1.094vw;
   font-size: clamp(1rem, 1.094vw, 1.094vw);
   line-height: 1.5em;
   letter-spacing: 0.03em;
   word-spacing: 0.05em;
 }
-div.aboutus p span {
+.about-us p span {
   color: var(--col-compl);
   color: var(--col-complOfMonoc);
   font-family: var(--fontFamText);
@@ -210,102 +237,148 @@ div.aboutus p span {
   font-weight: 900;
 }
 
-div.services {
+.services {
   display: grid;
-  grid-template-columns: max-content max-content;
+  grid-template-columns: repeat(2, max-content);
   gap: 4.8vw 0;
   justify-content: center;
   align-content: center;
 }
 @media screen and (min-width: 1024px) {
-  div.services {
+  .services {
     padding-left: 2vw;
   }
 }
-div.services.show article {
-  opacity: 1;
-}
-div.services.show article:nth-of-type(1) {
-  transform: translate(0, -2vw);
-}
-div.services.show article:nth-of-type(2) {
-  transform: translate(0, 0);
-}
-div.services.show article:nth-of-type(3) {
-  transform: translate(3vw, -2vw);
-}
-div.services.show article:nth-of-type(4) {
-  transform: translate(3vw, 0);
-}
-div.services article {
-  border: px solid teal;
+.services article {
   padding: 0 2vw;
   opacity: 0;
-  transition: transform 0.4s ease-out, opacity 0.6s ease-out;
+  transition: 0;
+  transition-delay: 0;
 }
-div.services article hgroup {
+.services article:nth-of-type(1) {
+  transform: translate(4vw, 0);
+}
+.services article:nth-of-type(1) img {
+  width: 50%;
+}
+.services article:nth-of-type(2) {
+  transform: translate(4vw, 2vw);
+}
+.services article:nth-of-type(2) img {
+  width: 65%;
+}
+.services article:nth-of-type(3) {
+  transform: translate(7vw, 0vw);
+}
+.services article:nth-of-type(3) img {
+  width: 60%;
+}
+.services article:nth-of-type(4) {
+  transform: translate(7vw, 2vw);
+}
+.services article:nth-of-type(4) img {
+  width: 70%;
+}
+.services.show article:nth-of-type(1) {
+  transform: translate(0, -2vw);
+  transition-delay: 0.02s;
+}
+.services.show article:nth-of-type(2) {
+  transform: translate(0, 0);
+  transition-delay: 0.22s;
+}
+.services.show article:nth-of-type(3) {
+  transform: translate(3vw, -2vw);
+  transition-delay: 0.42s;
+}
+.services.show article:nth-of-type(4) {
+  transform: translate(3vw, 0);
+  transition-delay: 0.62s;
+}
+.services hgroup {
   display: flex;
   align-items: center;
   padding-left: 0.9rem;
   margin-bottom: 2.2vh;
 }
-div.services article hgroup span {
+.services hgroup span {
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  width: 3.229vw;
+  width: 3rem;
   width: clamp(3rem, 3.229vw, 3.229vw);
-  height: 3.229vw;
+  height: 3rem;
   height: clamp(3rem, 3.229vw, 3.229vw);
   background-color: var(--col-monoc);
   margin-right: 1.667vw;
 }
-div.services article hgroup span img {
-  display: block;
-  width: 60%;
-}
-div.services article hgroup h3 {
+.services hgroup h3 {
   color: var(--col-main);
-  font-family: var(--fontFam);
-  font-size: 1.063rem;
-  font-size: clamp(1.063rem, 1.042vw, 1.042vw);
   text-decoration: underline;
-  text-transform: uppercase;
-  letter-spacing: 0.06rem;
 }
-div.services article li {
-  color: #000;
-  font-family: var(--fontFamText);
+.services li {
   font-size: 1.063rem;
   font-size: clamp(1.063rem, 1.042vw, 1.042vw);
   line-height: 1.8em;
   letter-spacing: -0.02rem;
 }
-div.services article:nth-of-type(1) {
-  transform: translate(4vw, 0);
-  transition-delay: 0.02s;
+
+.contact {
+  border: px solid green;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
-div.services article:nth-of-type(1) hgroup span img {
-  width: 50%;
+.contact article {
+  border: px solid silver;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-div.services article:nth-of-type(2) {
-  transform: translate(4vw, 2vw);
-  transition-delay: 0.22s;
+.contact article > * {
+  border: px solid orange;
 }
-div.services article:nth-of-type(2) hgroup span img {
-  width: 65%;
+.contact h4, .contact ul, .contact h6 {
+  margin-bottom: 1.3vw;
 }
-div.services article:nth-of-type(3) {
-  transform: translate(7vw, 0vw);
-  transition-delay: 0.42s;
+.contact h4 {
+  color: var(--col-complOfMonoc);
+  text-align: center;
+  line-height: 1.6em;
 }
-div.services article:nth-of-type(4) {
-  transform: translate(7vw, 2vw);
-  transition-delay: 0.62s;
+.contact h4 span {
+  text-transform: lowercase;
 }
-div.services article:nth-of-type(4) hgroup span img {
-  width: 70%;
+.contact dd {
+  margin-bottom: 2vw;
+  text-align: center;
+  color: #222;
+}
+.contact dd a {
+  font-weight: 600;
+  color: #222;
+  letter-spacing: 0.1em;
+}
+.contact li {
+  font-size: 18px;
+  line-height: 2.2em;
+}
+.contact li span {
+  color: var(--col-monoc);
+  font-size: 0.8em;
+}
+.contact h6 {
+  color: var(--col-monoc);
+}
+.contact h6 figure {
+  display: inline-block;
+  transform: rotate(180deg);
+}
+
+.show article {
+  opacity: 1;
+  transition: transform 0.38s ease-out, opacity 0.6s ease-out;
 }
 
 :root {
@@ -320,15 +393,16 @@ footer {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 14vh 0 11vh;
+  padding: 15vh 0 12vh;
 }
 footer p {
   border: px solid yellow;
   width: 50ch;
-  margin-bottom: 13vh;
+  margin-bottom: 14vh;
   color: #fff;
   font-family: var(--fontFamText);
-  font-size: 1.75rem;
+  font-size: 1.125rem;
+  font-size: clamp(1.125rem, 1.354vw, 1.354vw);
   font-style: italic;
   word-spacing: 0.1em;
   line-height: 1.5;

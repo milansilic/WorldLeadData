@@ -1,4 +1,5 @@
-h1, h2 {
+h1,
+h2 {
    font-family: var(--fontFam);
    text-align: center;
    text-transform: capitalize;
@@ -7,7 +8,7 @@ h1, h2 {
 h1 {
    color: var(--col-heading);
    font-size: 4.8vw;
-   
+
    @media screen and (min-width: 1280px) {
       font-size: 3.8vw;
    }
@@ -23,4 +24,39 @@ h2 {
    font-size: clamp(1.2rem, 1.667vw, 1.667vw);
    text-shadow: 0px 0px 20px #fff;
    letter-spacing: .05em;
+}
+
+h3,
+h4,
+h6 {
+   font-family: var(--fontFam);
+   text-transform: uppercase;
+}
+
+h3 {
+   font-size: 1.063rem;
+   font-size: clamp(1.063rem, 1.042vw, 1.042vw);
+   letter-spacing: .06rem;
+}
+
+h4 {
+   font-size: 1rem;
+   font-size: clamp(1rem, 0.885vw, 0.885vw);
+   letter-spacing: .04em;
+   word-spacing: .05em;
+}
+
+h6 {
+   font-size: 1rem;
+   font-size: clamp(1rem, 0.833vw, 0.833vw);
+   letter-spacing: .04em;
+   word-spacing: .05em;
+   text-transform: lowercase;
+}
+
+p,
+li,
+dd {
+   color: #000;
+   font-family: var(--fontFamText);
 }

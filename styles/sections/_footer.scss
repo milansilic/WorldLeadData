@@ -8,14 +8,15 @@ footer {
    justify-content: center;
    align-items: center;
    flex-direction: column;
-   padding: 14vh 0 11vh;
+   padding: 15vh 0 12vh;
 
    p { border: px solid yellow;
       width: 50ch;
-      margin-bottom: 13vh;
+      margin-bottom: 14vh;
       color: #fff;
       font-family: var(--fontFamText);
-      font-size: 1.750rem;
+      font-size: 1.125rem;
+      font-size: clamp(1.125rem, 1.354vw, 1.354vw);
       font-style: italic;
       word-spacing: .1em;
       line-height: 1.5;

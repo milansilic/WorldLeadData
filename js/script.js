@@ -89,7 +89,7 @@ window.onload = () => window.scrollY > 100 ? nav.classList.add('paint') : nav.cl
 
 
 // IO
-const aboutus = document.querySelector('.aboutus');
+const aboutus = document.querySelector('.about-us');
 const services = document.querySelector('.services');
 // const io3Arts = [...document.querySelectorAll('.io3>div>article')].forEach((ar, i) => ar.style.transitionDelay = `.${i}s`);
 

@@ -31,19 +31,18 @@ nav {
       }
    }
 
-   picture { border: px solid yellow; 
+   picture {
       width: 18vw;
       transition: transform .2s ease-out;
 
       img {
-         display: block;
          width: 100%;
          -webkit-filter: drop-shadow(3px 3px 3px rgba(0,0,0, 0.4));
          filter: drop-shadow(3px 3px 3px rgba(0,0,0, 0.4));
       }
    }
 
-   ul {border: px solid yellow;
+   ul {
       display: flex;
 
       li {
