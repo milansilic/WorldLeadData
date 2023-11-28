@@ -136,14 +136,12 @@ let callback = (entries) => {
             }
          } else {                                  // exit bottom
             switch (true) {
-               case cls.contains('entry2'):
-                  nav.classList.remove('paint');
-                  break;
                case cls.contains('entry1'):
                   aboutus.classList.remove('show')
-                  break;
-               case cls.contains('entry3'):
                   services.classList.remove('show');
+                  break;
+               case cls.contains('entry2'):
+                  nav.classList.remove('paint');
                   break;
             }
          }
