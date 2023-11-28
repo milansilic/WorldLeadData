@@ -140,43 +140,44 @@ main section > div {
 main section h2 {
   margin-top: auto;
 }
-main section div.aboutus {
+
+div.aboutus {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-main section div.aboutus article {
+div.aboutus article {
   margin-bottom: 3vw;
   opacity: 0;
   transform: translate(4vw, 2vw);
   transition: 0;
   transition-delay: 0;
 }
-main section div.aboutus article:nth-of-type(1) {
+div.aboutus article:nth-of-type(1) {
   margin-left: -4vw;
 }
-main section div.aboutus article:nth-of-type(2) {
+div.aboutus article:nth-of-type(2) {
   margin-left: 1vw;
 }
-main section div.aboutus article:nth-of-type(3) {
+div.aboutus article:nth-of-type(3) {
   margin-left: 6vw;
 }
-main section div.aboutus.show article {
+div.aboutus.show article {
   opacity: 1;
   transform: translate(0, 0);
   transition: transform 0.38s ease-out, opacity 0.8s ease-out;
 }
-main section div.aboutus.show article:nth-of-type(1) {
+div.aboutus.show article:nth-of-type(1) {
   transition-delay: 0.02s;
 }
-main section div.aboutus.show article:nth-of-type(2) {
+div.aboutus.show article:nth-of-type(2) {
   transition-delay: 0.32s;
 }
-main section div.aboutus.show article:nth-of-type(3) {
+div.aboutus.show article:nth-of-type(3) {
   transition-delay: 0.6s;
 }
-main section div.aboutus h4 {
+div.aboutus h4 {
   margin-bottom: 0.7vh;
   color: var(--col-monoc);
   font-family: var(--fontFam);
@@ -186,11 +187,11 @@ main section div.aboutus h4 {
   letter-spacing: 0.04em;
   word-spacing: 0.05em;
 }
-main section div.aboutus h4 span {
+div.aboutus h4 span {
   font-size: 1.125rem;
   font-size: clamp(1.125rem, 0.938vw, 0.938vw);
 }
-main section div.aboutus p {
+div.aboutus p {
   width: 64ch;
   color: #000;
   font-family: var(--fontFamText);
@@ -200,7 +201,7 @@ main section div.aboutus p {
   letter-spacing: 0.03em;
   word-spacing: 0.05em;
 }
-main section div.aboutus p span {
+div.aboutus p span {
   color: var(--col-compl);
   color: var(--col-complOfMonoc);
   font-family: var(--fontFamText);
@@ -208,7 +209,8 @@ main section div.aboutus p span {
   font-size: clamp(1.1rem, 1.198vw, 1.198vw);
   font-weight: 900;
 }
-main section div.services {
+
+div.services {
   display: grid;
   grid-template-columns: max-content max-content;
   gap: 4.8vw 0;
@@ -216,38 +218,38 @@ main section div.services {
   align-content: center;
 }
 @media screen and (min-width: 1024px) {
-  main section div.services {
+  div.services {
     padding-left: 2vw;
   }
 }
-main section div.services.show article {
+div.services.show article {
   opacity: 1;
 }
-main section div.services.show article:nth-of-type(1) {
+div.services.show article:nth-of-type(1) {
   transform: translate(0, -2vw);
 }
-main section div.services.show article:nth-of-type(2) {
+div.services.show article:nth-of-type(2) {
   transform: translate(0, 0);
 }
-main section div.services.show article:nth-of-type(3) {
+div.services.show article:nth-of-type(3) {
   transform: translate(3vw, -2vw);
 }
-main section div.services.show article:nth-of-type(4) {
+div.services.show article:nth-of-type(4) {
   transform: translate(3vw, 0);
 }
-main section div.services article {
+div.services article {
   border: px solid teal;
   padding: 0 2vw;
   opacity: 0;
-  transition: transform 0.5s ease-out, opacity 0.6s ease-out;
+  transition: transform 0.4s ease-out, opacity 0.6s ease-out;
 }
-main section div.services article hgroup {
+div.services article hgroup {
   display: flex;
   align-items: center;
   padding-left: 0.9rem;
   margin-bottom: 2.2vh;
 }
-main section div.services article hgroup span {
+div.services article hgroup span {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -259,11 +261,11 @@ main section div.services article hgroup span {
   background-color: var(--col-monoc);
   margin-right: 1.667vw;
 }
-main section div.services article hgroup span img {
+div.services article hgroup span img {
   display: block;
   width: 60%;
 }
-main section div.services article hgroup h3 {
+div.services article hgroup h3 {
   color: var(--col-main);
   font-family: var(--fontFam);
   font-size: 1.063rem;
@@ -272,7 +274,7 @@ main section div.services article hgroup h3 {
   text-transform: uppercase;
   letter-spacing: 0.06rem;
 }
-main section div.services article li {
+div.services article li {
   color: #000;
   font-family: var(--fontFamText);
   font-size: 1.063rem;
@@ -280,29 +282,29 @@ main section div.services article li {
   line-height: 1.8em;
   letter-spacing: -0.02rem;
 }
-main section div.services article:nth-of-type(1) {
+div.services article:nth-of-type(1) {
   transform: translate(4vw, 0);
   transition-delay: 0.02s;
 }
-main section div.services article:nth-of-type(1) hgroup span img {
+div.services article:nth-of-type(1) hgroup span img {
   width: 50%;
 }
-main section div.services article:nth-of-type(2) {
+div.services article:nth-of-type(2) {
   transform: translate(4vw, 2vw);
   transition-delay: 0.22s;
 }
-main section div.services article:nth-of-type(2) hgroup span img {
+div.services article:nth-of-type(2) hgroup span img {
   width: 65%;
 }
-main section div.services article:nth-of-type(3) {
+div.services article:nth-of-type(3) {
   transform: translate(7vw, 0vw);
   transition-delay: 0.42s;
 }
-main section div.services article:nth-of-type(4) {
+div.services article:nth-of-type(4) {
   transform: translate(7vw, 2vw);
   transition-delay: 0.62s;
 }
-main section div.services article:nth-of-type(4) hgroup span img {
+div.services article:nth-of-type(4) hgroup span img {
   width: 70%;
 }
 
