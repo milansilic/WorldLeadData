@@ -16,29 +16,68 @@ html, body {
   --fontFamText: "Mona-Sans";
 }
 
+h1, h2 {
+  font-family: var(--fontFam);
+  text-align: center;
+  text-transform: capitalize;
+}
+
+h1 {
+  color: var(--col-heading);
+  font-size: 4.8vw;
+}
+@media screen and (min-width: 1280px) {
+  h1 {
+    font-size: 3.8vw;
+  }
+}
+@media screen and (min-width: 2160px) {
+  h1 {
+    font-size: 2.8vw;
+  }
+}
+
+h2 {
+  color: var(--col-main);
+  font-size: 1.2rem;
+  font-size: clamp(1.2rem, 1.667vw, 1.667vw);
+  text-shadow: 0px 0px 20px #fff;
+  letter-spacing: 0.05em;
+}
+
 :root {
   --fontFamText: "Mona-Sans";
 }
 
 nav {
-  border-top: 2.4rem solid transparent;
+  z-index: 2;
   width: 100%;
-  height: 10rem;
+  height: 11vh;
   position: fixed;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  padding: 0 2vw 0 3vw;
-  z-index: 2;
+  padding: 0 2.2vw 0 3vw;
+  transform: translateY(2.6rem);
+  transform: translateY(4.3vh);
   transition: 0.2s ease-out, background-color 1s;
 }
 nav.paint {
   background-color: var(--col-main-light);
 }
+nav.scr {
+  padding: 0 1.2vw 0 1.8vw;
+  transform: translateY(0rem);
+}
+nav.scr picture {
+  transform: scale(0.75);
+}
+nav.scr ul li {
+  padding: 0.9vw 2.2vw 0.8vw;
+}
 nav picture {
   border: px solid yellow;
-  display: block;
   width: 18vw;
   transition: transform 0.2s ease-out;
 }
@@ -49,27 +88,19 @@ nav picture img {
   filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.4));
 }
 nav ul {
+  border: px solid yellow;
   display: flex;
 }
 nav ul li {
-  padding: 1vw 2.5vw 0.9vw;
+  padding: 1vw 2.7vw 0.9vw;
   color: #fff;
   font-family: var(--fontFam);
-  font-size: 0.9rem;
+  font-size: 0.75rem;
+  font-size: clamp(0.75rem, 0.729vw, 0.729vw);
   text-transform: uppercase;
-  letter-spacing: 0.1rem;
+  letter-spacing: 0.1vw;
   transition: padding 0.2s ease-out;
   cursor: pointer;
-}
-nav.scr {
-  padding: 0 1.2vw 0 1.8vw;
-  transform: translateY(-2.4rem);
-}
-nav.scr picture {
-  transform: scale(0.75);
-}
-nav.scr ul li {
-  padding: 0.9vw 2.2vw 0.8vw;
 }
 
 header {
@@ -90,168 +121,189 @@ header #buttons button {
   cursor: pointer;
 }
 
-h1 {
-  color: var(--col-heading);
-  font-size: 4.8vw;
-  font-family: var(--fontFam);
-  text-transform: capitalize;
-  text-align: center;
-}
-@media screen and (min-width: 1280px) {
-  h1 {
-    font-size: 3.8vw;
-  }
-}
-@media screen and (min-width: 2160px) {
-  h1 {
-    font-size: 2.8vw;
-  }
-}
-
 :root {
   --fontFamText: "Mona-Sans";
 }
 
 main section {
-  background-image: radial-gradient(#ffffff, #fefefe);
-  scroll-snap-align: start;
   height: 100vh;
-  padding: 18vh 16vw 0;
-  padding: 18vh 0vw 0;
+  background-color: #f1f1f1;
+  display: flex;
+  flex-direction: column;
+  scroll-snap-align: start;
+  overflow: hidden;
+}
+main section > div {
+  flex-basis: 78%;
+  overflow: hidden;
 }
 main section h2 {
-  margin-bottom: 8vh;
-  color: var(--col-main);
-  font-size: 2rem;
-  font-family: var(--fontFam);
-  text-align: center;
-  text-transform: capitalize;
-  letter-spacing: 0.05rem;
+  margin-top: auto;
 }
-main section .aboutus {
-  border: px dashed red;
-  padding: 0 19vw 0 25vw;
-  display: grid;
-  grid-template-columns: 12% 12% 52% 12% 12%;
-  gap: 7vh 0;
+main section div.aboutus {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-main section .aboutus article {
-  border: px solid green;
+main section div.aboutus article {
+  margin-bottom: 3vw;
+  opacity: 0;
+  transform: translate(4vw, 2vw);
+  transition: 0;
+  transition-delay: 0;
 }
-main section .aboutus article:nth-of-type(1) {
-  grid-column: 1/span 3;
+main section div.aboutus article:nth-of-type(1) {
+  margin-left: -4vw;
 }
-main section .aboutus article:nth-of-type(2) {
-  grid-column: 2/span 3;
+main section div.aboutus article:nth-of-type(2) {
+  margin-left: 1vw;
 }
-main section .aboutus article:nth-of-type(3) {
-  grid-column: 3/span 3;
+main section div.aboutus article:nth-of-type(3) {
+  margin-left: 6vw;
 }
-main section .aboutus h4 {
+main section div.aboutus.show article {
+  opacity: 1;
+  transform: translate(0, 0);
+  transition: transform 0.38s ease-out, opacity 0.8s ease-out;
+}
+main section div.aboutus.show article:nth-of-type(1) {
+  transition-delay: 0.02s;
+}
+main section div.aboutus.show article:nth-of-type(2) {
+  transition-delay: 0.32s;
+}
+main section div.aboutus.show article:nth-of-type(3) {
+  transition-delay: 0.6s;
+}
+main section div.aboutus h4 {
   margin-bottom: 0.7vh;
   color: var(--col-monoc);
   font-family: var(--fontFam);
-  font-size: 1.063rem;
+  font-size: 1rem;
+  font-size: clamp(1rem, 0.885vw, 0.885vw);
   text-transform: uppercase;
   letter-spacing: 0.04em;
   word-spacing: 0.05em;
 }
-main section .aboutus p {
-  border: px solid lime;
+main section div.aboutus h4 span {
+  font-size: 1.125rem;
+  font-size: clamp(1.125rem, 0.938vw, 0.938vw);
+}
+main section div.aboutus p {
+  width: 64ch;
   color: #000;
   font-family: var(--fontFamText);
-  font-size: 1.313rem;
+  font-size: 1.094vw;
+  font-size: clamp(1rem, 1.094vw, 1.094vw);
+  line-height: 1.5em;
   letter-spacing: 0.03em;
   word-spacing: 0.05em;
-  line-height: 1.5;
 }
-main section .aboutus p span {
+main section div.aboutus p span {
   color: var(--col-compl);
   color: var(--col-complOfMonoc);
   font-family: var(--fontFamText);
   font-size: 1.438rem;
+  font-size: clamp(1.1rem, 1.198vw, 1.198vw);
   font-weight: 900;
 }
-main section .services {
+main section div.services {
   display: grid;
-  grid-template-columns: 34rem 34rem;
-  gap: 12vh 1rem;
+  grid-template-columns: max-content max-content;
+  gap: 4.8vw 0;
   justify-content: center;
+  align-content: center;
 }
-main section .services article {
+@media screen and (min-width: 1024px) {
+  main section div.services {
+    padding-left: 2vw;
+  }
+}
+main section div.services.show article {
+  opacity: 1;
+}
+main section div.services.show article:nth-of-type(1) {
+  transform: translate(0, -2vw);
+}
+main section div.services.show article:nth-of-type(2) {
+  transform: translate(0, 0);
+}
+main section div.services.show article:nth-of-type(3) {
+  transform: translate(3vw, -2vw);
+}
+main section div.services.show article:nth-of-type(4) {
+  transform: translate(3vw, 0);
+}
+main section div.services article {
+  border: px solid teal;
+  padding: 0 2vw;
   opacity: 0;
   transition: transform 0.5s ease-out, opacity 0.6s ease-out;
 }
-main section .services article hgroup {
+main section div.services article hgroup {
   display: flex;
   align-items: center;
   padding-left: 0.9rem;
   margin-bottom: 2.2vh;
 }
-main section .services article hgroup span {
+main section div.services article hgroup span {
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  width: 62px;
-  height: 62px;
+  width: 3.229vw;
+  width: clamp(3rem, 3.229vw, 3.229vw);
+  height: 3.229vw;
+  height: clamp(3rem, 3.229vw, 3.229vw);
   background-color: var(--col-monoc);
-  margin-right: 2rem;
+  margin-right: 1.667vw;
 }
-main section .services article hgroup span img {
+main section div.services article hgroup span img {
   display: block;
   width: 60%;
 }
-main section .services article hgroup h3 {
+main section div.services article hgroup h3 {
   color: var(--col-main);
   font-family: var(--fontFam);
-  font-size: 1.25rem;
+  font-size: 1.063rem;
+  font-size: clamp(1.063rem, 1.042vw, 1.042vw);
   text-decoration: underline;
   text-transform: uppercase;
   letter-spacing: 0.06rem;
 }
-main section .services article li {
+main section div.services article li {
   color: #000;
   font-family: var(--fontFamText);
-  font-size: 1.25rem;
+  font-size: 1.063rem;
+  font-size: clamp(1.063rem, 1.042vw, 1.042vw);
+  line-height: 1.8em;
   letter-spacing: -0.02rem;
-  margin-bottom: 1vh;
 }
-main section .services article:nth-of-type(1) {
-  transform: translate(10rem, 5rem);
+main section div.services article:nth-of-type(1) {
+  transform: translate(4vw, 0);
+  transition-delay: 0.02s;
 }
-main section .services article:nth-of-type(1) hgroup span img {
+main section div.services article:nth-of-type(1) hgroup span img {
   width: 50%;
 }
-main section .services article:nth-of-type(2) {
-  transform: translate(10rem, 7rem);
+main section div.services article:nth-of-type(2) {
+  transform: translate(4vw, 2vw);
+  transition-delay: 0.22s;
 }
-main section .services article:nth-of-type(2) hgroup span img {
+main section div.services article:nth-of-type(2) hgroup span img {
   width: 65%;
 }
-main section .services article:nth-of-type(3) {
-  transform: translate(12rem, 5rem);
+main section div.services article:nth-of-type(3) {
+  transform: translate(7vw, 0vw);
+  transition-delay: 0.42s;
 }
-main section .services article:nth-of-type(4) {
-  transform: translate(12rem, 7rem);
+main section div.services article:nth-of-type(4) {
+  transform: translate(7vw, 2vw);
+  transition-delay: 0.62s;
 }
-main section .services article:nth-of-type(4) hgroup span img {
+main section div.services article:nth-of-type(4) hgroup span img {
   width: 70%;
-}
-main section div.show article {
-  opacity: 1;
-}
-main section div.show article:nth-of-type(1) {
-  transform: translate(1rem, 0);
-}
-main section div.show article:nth-of-type(2) {
-  transform: translate(1rem, 2rem);
-}
-main section div.show article:nth-of-type(3) {
-  transform: translate(3rem, 0);
-}
-main section div.show article:nth-of-type(4) {
-  transform: translate(3rem, 2rem);
 }
 
 :root {
@@ -266,12 +318,12 @@ footer {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 12vh 0 10vh;
+  padding: 14vh 0 11vh;
 }
 footer p {
   border: px solid yellow;
   width: 50ch;
-  margin-bottom: 10vh;
+  margin-bottom: 13vh;
   color: #fff;
   font-family: var(--fontFamText);
   font-size: 1.75rem;

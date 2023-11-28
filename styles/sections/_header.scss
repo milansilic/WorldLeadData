@@ -1,24 +1,37 @@
 @import '../base/variables';
 
 nav {
-   border-top: 2.4rem solid transparent;
+   z-index: 2;
    width: 100%;
-   height: 10rem;
+   height: 11vh;
    position: fixed;
    display: flex;
    flex-wrap: wrap;
    justify-content: space-between;
    align-items: center;
-   padding: 0 2vw 0 3vw;
-   z-index: 2;
+   padding: 0 2.2vw 0 3vw;
+   transform: translateY(2.6rem);
+   transform: translateY(4.3vh);
    transition: .2s ease-out, background-color 1s;
 
    &.paint {
       background-color: var(--col-main-light);
    }
 
-   picture { border: px solid yellow;
-      display: block;
+   &.scr {
+      padding: 0 1.2vw 0 1.8vw;
+      transform: translateY(0rem);
+
+      picture {
+         transform: scale(.75);
+      }
+
+      ul li {
+         padding: .9vw 2.2vw .8vw;
+      }
+   }
+
+   picture { border: px solid yellow; 
       width: 18vw;
       transition: transform .2s ease-out;
 
@@ -30,31 +43,19 @@ nav {
       }
    }
 
-   ul {
+   ul {border: px solid yellow;
       display: flex;
 
       li {
-         padding: 1vw 2.5vw .9vw;
+         padding: 1vw 2.7vw .9vw;
          color: #fff;
          font-family: var(--fontFam);
-         font-size: .9rem;
+         font-size: 0.750rem;
+         font-size: clamp(0.750rem, 0.729vw, 0.729vw);
          text-transform: uppercase;
-         letter-spacing: .1rem;
+         letter-spacing: .1vw;
          transition: padding .2s ease-out;
          cursor: pointer;
-      }
-   }
-
-   &.scr {
-      padding: 0 1.2vw 0 1.8vw;
-      transform: translateY(-2.4rem);
-
-      picture {
-         transform: scale(.75);
-      }
-
-      ul li {
-         padding: .9vw 2.2vw .8vw;
       }
    }
 }
@@ -76,21 +77,5 @@ header {
       button {
          cursor: pointer;
       }
-   }
-}
-
-h1 {
-   color: var(--col-heading);
-   font-size: 4.8vw;
-   font-family: var(--fontFam);
-   text-transform: capitalize;
-   text-align: center;
-
-   @media screen and (min-width: 1280px) {
-      font-size: 3.8vw;
-   }
-
-   @media screen and (min-width: 2160px) {
-      font-size: 2.8vw;
    }
 }

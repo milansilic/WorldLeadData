@@ -83,44 +83,69 @@ logoImg.src = logos[l];
 // NAV
 const nav = document.querySelector('nav');
 window.onscroll = () => window.scrollY > 100 ? nav.classList.add('scr') : nav.classList.remove('scr')
+window.onload = () => window.scrollY > 100 ? nav.classList.add('paint') : nav.classList.remove('paint')
+
+
 
 
 // IO
-const io3Arts = [...document.querySelectorAll('.io3>div>article')].forEach((ar,i) => ar.style.transitionDelay = `.${i}s`);
+const aboutus = document.querySelector('.aboutus');
+const services = document.querySelector('.services');
+// const io3Arts = [...document.querySelectorAll('.io3>div>article')].forEach((ar, i) => ar.style.transitionDelay = `.${i}s`);
 
-let zones = [document.querySelector('header'), ...document.querySelectorAll('main section'), document.querySelector('footer')];
+let zones = [...document.querySelectorAll('main section, header, footer, .entry1, .entry2, .entry3')];
 
 let options = {
-   rootMargin: "-120px 0px 0px 0px",
+   rootMargin: "0px",
    threshold: 0,
 };
 
 let callback = (entries) => {
    entries.forEach(entry => {
       var cls = entry.target.classList;
+
       if (entry.isIntersecting) {
+
+         switch (true) {
+            case cls.contains('entry1'):
+               aboutus.classList.add('show')
+               break;
+            case cls.contains('entry3'):
+               services.classList.add('show');
+               break;
+         }
+
          if (entry.boundingClientRect.top < 0) {   // enters from top
             switch (true) {
-               case cls.contains('io1'):
-                  nav.classList.remove('paint');
-                  break;
+
             }
          } else {                                  // enters from bottom
             switch (true) {
-               case cls.contains('io4'):
-                  document.querySelector('.io3>div').classList.add('show');
+               case cls.contains('entry2'):
+                  nav.classList.add('paint');
                   break;
             }
          }
+
       } else {
+
          if (entry.boundingClientRect.top < 0) {   // exit top
             switch (true) {
-               case cls.contains('io1'):
-                  nav.classList.add('paint');
-                  break;
-               
+
+
             }
          } else {                                  // exit bottom
+            switch (true) {
+               case cls.contains('entry2'):
+                  nav.classList.remove('paint');
+                  break;
+               case cls.contains('entry1'):
+                  aboutus.classList.remove('show')
+                  break;
+               case cls.contains('entry3'):
+                  services.classList.remove('show');
+                  break;
+            }
          }
       }
    });
