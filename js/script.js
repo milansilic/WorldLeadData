@@ -1,8 +1,8 @@
-const doc = document.documentElement;
+const doc = document.documentElement
 
 // HEADLINES
-let h = 0;
-let headline = document.getElementById('headline');
+let h = 0
+let headline = document.getElementById('headline')
 let headlines = [
    "premium digital marketing service",
    "grow your marketing reach",
@@ -10,14 +10,9 @@ let headlines = [
    "enahance your business today",
    "scale your sales with us",
    "let's develop your sales together"
-];
+]
 
-headline.innerHTML = headlines[h];
-
-// document.getElementById('headline-btn').onclick = () => {
-//    h < headlines.length - 1 ? h++ : h = 0;
-//    headline.innerHTML = headlines[h];
-// }
+headline.innerHTML = headlines[h]
 
 
 // COLORS
@@ -28,72 +23,55 @@ let colors = [
    { frst: '#003d7d', frstL: '#034994', sec: 'purple', heading: 'white' },
    { frst: '#153875', frstL: '#1e4588', sec: 'purple', heading: 'white' },
    { frst: '#094159', frstL: '#0b4f6c', sec: 'purple', heading: 'white' },
-];
+]
 
 let setColor = () => {
-   doc.style.setProperty("--col-main", colors[c].frst);
-   doc.style.setProperty("--col-main-light", colors[c].frstL);
-   doc.style.setProperty("--col-sec", colors[c].sec);
-   doc.style.setProperty("--col-monoc", colors[c].monoc);
-   doc.style.setProperty("--col-compl", colors[c].compl);
-   doc.style.setProperty("--col-complOfMonoc", colors[c].complOfMonoc);
-   doc.style.setProperty("--col-heading", colors[c].heading);
+   doc.style.setProperty("--col-main", colors[c].frst)
+   doc.style.setProperty("--col-main-light", colors[c].frstL)
+   doc.style.setProperty("--col-sec", colors[c].sec)
+   doc.style.setProperty("--col-monoc", colors[c].monoc)
+   doc.style.setProperty("--col-compl", colors[c].compl)
+   doc.style.setProperty("--col-complOfMonoc", colors[c].complOfMonoc)
+   doc.style.setProperty("--col-heading", colors[c].heading)
 }
-setColor();
-
-// document.getElementById('colors-btn').onclick = () => {
-//    c < colors.length - 1 ? c++ : c = 0;
-//    setColor();
-// }
+setColor()
 
 
 // FONTS
-let f = 0;
+let f = 0
 let fonts = [
    'Neue Haas Grotesk Display Pro',
    'Cal Sans',
-];
+]
 
-doc.style.setProperty("--fontFam", fonts[f]);
-
-// document.getElementById('fonts-btn').onclick = () => {
-//    f < fonts.length - 1 ? f++ : f = 0;
-//    doc.style.setProperty("--fontFam", fonts[f]);
-// }
+doc.style.setProperty("--fontFam", fonts[f])
 
 
 // LOGO
-let l = 0;
-let logoImg = document.getElementById("logo");
+let l = 0
+let logoImg = document.getElementById("logo")
 let logos = [
    'icons/logo3.svg',
    'icons/logo1.svg',
    'icons/logo2.svg',
    'icons/logo4.svg',
-];
+]
 
-logoImg.src = logos[l];
-
-// document.getElementById('logo-btn').onclick = () => {
-//    l < logos.length - 1 ? l++ : l = 0;
-//    logoImg.src = logos[l];
-// }
+logoImg.src = logos[l]
 
 
 // NAV
-const nav = document.querySelector('nav');
+const nav = document.querySelector('nav')
 window.onscroll = () => window.scrollY > 100 ? nav.classList.add('scr') : nav.classList.remove('scr')
 window.onload = () => window.scrollY > 100 ? nav.classList.add('paint') : nav.classList.remove('paint')
 
 
-
-
 // IO
-const aboutus = document.querySelector('.about-us');
-const services = document.querySelector('.services');
-// const io3Arts = [...document.querySelectorAll('.io3>div>article')].forEach((ar, i) => ar.style.transitionDelay = `.${i}s`);
+const aboutus = document.querySelector('.about-us')
+const services = document.querySelector('.services')
+const cta = document.querySelector('.entry4')
 
-let zones = [...document.querySelectorAll('main section, header, footer, .entry1, .entry2, .entry3')];
+let zones = [...document.querySelectorAll('main section, header, footer, .entry1, .entry2, .entry3, .entry4')]
 
 let options = {
    rootMargin: "0px",
@@ -102,7 +80,7 @@ let options = {
 
 let callback = (entries) => {
    entries.forEach(entry => {
-      var cls = entry.target.classList;
+      var cls = entry.target.classList
 
       if (entry.isIntersecting) {
 
@@ -111,37 +89,41 @@ let callback = (entries) => {
                aboutus.classList.add('show')
                break;
             case cls.contains('entry3'):
-               services.classList.add('show');
+               services.classList.add('show')
+               break;
+            case cls.contains('entry4'):
+               cta.classList.add('pulse')
                break;
          }
 
          if (entry.boundingClientRect.top < 0) {   // enters from top
-            switch (true) {
 
-            }
          } else {                                  // enters from bottom
             switch (true) {
                case cls.contains('entry2'):
-                  nav.classList.add('paint');
+                  nav.classList.add('paint')
                   break;
             }
          }
 
       } else {
 
+         switch (true) {
+            case cls.contains('entry4'):
+               cta.classList.remove('pulse')
+               break;
+         }
+
          if (entry.boundingClientRect.top < 0) {   // exit top
-            switch (true) {
 
-
-            }
          } else {                                  // exit bottom
             switch (true) {
                case cls.contains('entry1'):
                   aboutus.classList.remove('show')
-                  services.classList.remove('show');
+                  services.classList.remove('show')
                   break;
                case cls.contains('entry2'):
-                  nav.classList.remove('paint');
+                  nav.classList.remove('paint')
                   break;
             }
          }
@@ -162,3 +144,53 @@ navLis.forEach((el, i) => el.onclick = () => window.scrollTo({ top: sections[i].
 
 
 
+let name = document.getElementById('name').value;
+let name1 = 'pera';
+
+// let company = document.getElementById('company')
+// let email = document.getElementById('email')
+// let comment = document.getElementById('comment')
+
+// console.log(name1);
+
+// var name = 'aaa'
+// // let name = 'aaa'
+// // let name = 'aaa'
+// let company = 'bbb'
+// let email = 'ccc'
+// let comment = 'eee'
+
+let fullMessage = {
+   // name: this.name,
+   // company: 'djoka',
+   // email: this.email,
+   // comment: this.comment,
+}
+
+let Message = (name, address, email)=> {
+   this.name = name;
+   this.address = address;
+   this.email = email;
+}
+
+let send = (event)=> {
+   // console.log(document.getElementById('name').value);
+   // let newM = new Message(document.getElementById('name').value, document.getElementById('address').value, document.getElementById('email').value)
+
+
+   console.log(document.getElementById('name').value);
+
+}
+
+// function send() {
+//    console.log(this.company);
+// }
+
+function sendMail() {
+   // var link = "silic.milan@gmail.com"
+   //          + "&subject=" + encodeURIComponent("This is my subject")
+   //          + "&body=" + encodeURIComponent(document.getElementById('myText').value)
+   // ;
+   
+   // window.location.href = link;
+}

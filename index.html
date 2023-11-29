@@ -106,15 +106,27 @@
          <div class="contact">
             <article>
                <dl>
-                  <dt><img src="" alt=""></dt>
+                  <dt><img src="icons/ico_mail.svg" alt="email"></dt>
                   <dd><a href="mailto:roodang@smail.com">roodang@smail.com</a></dd>
-                  <dt><img src="" alt=""></dt>
+                  <dt><img src="icons/ico_phone.svg" alt="phone"></dt>
                   <dd><a href="tel:+13165552398">(316).555.2398</a></dd>
-                  <dt><img src="" alt=""></dt>
+                  <dt><img src="icons/ico_location.svg" alt="address"></dt>
                   <dd><address> Tree Opius / Box 354, Palm Tree / USA</address></dd>
                </dl>
             </article>
-            <article>contact form</article>
+            <article>
+               <form action="" method="" id="myForm" name="myForm" onsubmit="send();return false;">
+                  <label for="name">Your name:</label>
+                  <input type="text" id="name" name="name">
+                  <label for="company">Company / Organisation:</label>
+                  <input type="text" id="company" name="company">
+                  <label for="email">Your email:</label>
+                  <input type="email" id="email" name="email">
+                  <label for="comment">Tell us more about your chanllenge or goals:</label>
+                  <textarea id="comment" name="comment" form="myForm" placeholder="e.g. We'd like to improve our marketing strategy"></textarea>
+                  <button type="submit" form="myForm" onclick="">&#10043; Send &nbsp;</button>
+                </form>
+            </article>
             <article>
                <h4>We are a perfect match,<br><span>if you need to…</span></h4>
                <ul>
@@ -125,7 +137,7 @@
                   <li><span>&#10043;</span> upgrade your sales content</li>
                   <li><span>&#10043;</span> utilise multi-decade call center experience</li>
                </ul>
-               <h6><figure>&#10148;</figure> &nbsp;Let us know!</h6>
+               <h6 class="entry4"><figure>&#10148;</figure> &nbsp;Let us know!</h6>
             </article>
          </div>
       </section>
