@@ -357,7 +357,7 @@ main section h2 {
   margin-bottom: 1vw;
 }
 .contact dd {
-  margin-bottom: 3vw;
+  margin-bottom: 2.8vw;
   text-align: center;
   color: #222;
   font-size: 0.875rem;
@@ -409,7 +409,7 @@ main section h2 {
 }
 .contact form textarea {
   min-height: 2em;
-  margin-bottom: 1vw;
+  margin-bottom: 1.2vw;
 }
 .contact form button {
   align-self: flex-end;
@@ -472,12 +472,12 @@ footer {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 15vh 0 12vh;
+  padding: 16vh 0 12vh;
 }
 footer p {
   border: px solid yellow;
   width: 50ch;
-  margin-bottom: 14vh;
+  margin-bottom: 15vh;
   color: #fff;
   font-family: var(--fontFamText);
   font-size: 1.125rem;
