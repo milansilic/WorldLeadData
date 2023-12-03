@@ -1,4 +1,27 @@
-*{box-sizing:border-box;margin:0;padding:0;}
-ul{list-style:none;}
-html,body{scroll-snap-type:y proximity;}
-img{display:block;}
+* {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+}
+
+html,
+body {
+   scroll-snap-type: y proximity;
+}
+
+img {
+   display: block;
+}
+
+ul {
+   list-style: none;
+}
+
+fieldset {
+   border: none;
+
+   input,
+   textarea {
+      outline: 0;
+   }
+}

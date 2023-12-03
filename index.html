@@ -3,15 +3,22 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>World Lead Data</title>
    <link rel="stylesheet" href="fonts/fonts.css">
    <link rel="stylesheet" href="css/style.min.css">
+   <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+   <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+   <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+   <link rel="manifest" href="icons/site.webmanifest">
+   <link rel="mask-icon" href="icons/safari-pinned-tab.svg" color="#5bbad5">
+   <meta name="msapplication-TileColor" content="#da532c">
+   <meta name="theme-color" content="#ffffff">
+   <title>World Lead Data</title>
    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 <body>
    <nav>
       <picture>
-         <img id="logo" src="icons/logo1.svg" alt="world lead data">
+         <img id="logo" src="icons/logo3.svg" alt="world lead data">
       </picture>
       <ul>
          <li>about us</li>
@@ -19,14 +26,8 @@
          <li>contact</li>
       </ul>
    </nav>
-   <header class="io1">
-      <h1 id="headline"></h1>
-      <!-- <span id="buttons">
-         <button id="logo-btn">change logo</button>
-         <button id="headline-btn">change headline</button>
-         <button id="colors-btn">change colors</button>
-         <button id="fonts-btn">change font</button>
-      </span> -->
+   <header>
+      <h1>premium digital marketing service</h1>
    </header>
    <main>
       <section>
@@ -111,21 +112,29 @@
                   <dd><a href="mailto:world-lead-data@proton.me">world-lead-data@proton.me</a></dd>
                   <dt><img src="icons/ico_phone.svg" alt="phone"></dt>
                   <dd><a href="tel:+381604168010">+381 60 416 80 10</a></dd>
-                  <!-- <dt><img src="icons/ico_location.svg" alt="address"></dt>
-                  <dd><address> Tree Opius / Box 354, Palm Tree / USA</address></dd> -->
+                  <dt><img src="icons/ico_location.svg" alt="address"></dt>
+                  <dd><address> . . .</address></dd>
                </dl>
             </article>
             <article>
-               <form method="" id="myForm" name="myForm" onsubmit="sendMail();return false;" action="#">
-                  <label for="name">Your Name:</label>
-                  <input type="text" id="name" name="name">
-                  <label for="company">Company / Organization:</label>
-                  <input type="text" id="company" name="company">
-                  <label for="email">Your E-Mail:</label>
-                  <input type="email" id="email" name="email">
-                  <label for="comment">Tell us more about your challenges or goals:</label>
-                  <textarea id="comment" name="comment" form="myForm" placeholder="e.g. We'd like to improve our marketing strategy"></textarea>
-                  <button type="submit" form="myForm">&#10043; Send &nbsp;</button>
+               <form id="myForm" name="myForm" onsubmit="return false;" action="#">
+                  <fieldset>
+                     <label for="name">Your Name:</label>
+                     <input type="text" id="name" name="name">
+                  </fieldset>
+                  <fieldset>
+                     <label for="company">Company / Organization:</label>
+                     <input type="text" id="company" name="company">
+                  </fieldset>
+                  <fieldset class="req">
+                     <label for="email"><span>&#42;</span> Your E-Mail:</label>
+                     <input type="email" id="email" name="email">
+                  </fieldset>
+                  <fieldset class="req">
+                     <label for="comment"><span>&#42;</span> Tell us more about your challenges or goals:</label>
+                     <textarea id="comment" name="comment" form="myForm" placeholder="e.g. We'd like to improve our marketing strategy"></textarea>
+                  </fieldset>
+                  <button onclick="sendMail()">&#10043; Send &nbsp;</button>
                 </form>
             </article>
             <article>

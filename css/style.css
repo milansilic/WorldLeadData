@@ -4,11 +4,8 @@
   padding: 0;
 }
 
-ul {
-  list-style: none;
-}
-
-html, body {
+html,
+body {
   scroll-snap-type: y proximity;
 }
 
@@ -16,8 +13,28 @@ img {
   display: block;
 }
 
+ul {
+  list-style: none;
+}
+
+fieldset {
+  border: none;
+}
+fieldset input,
+fieldset textarea {
+  outline: 0;
+}
+
 :root {
   --fontFamText: "Mona-Sans";
+  --fontFam: "Neue Haas Grotesk Display Pro";
+  --col-main: #d44d5c;
+  --col-main-light: #d44d5c;
+  --col-sec: #C02E3E;
+  --col-monoc: #C02E3E;
+  --col-compl: #4DD4C5;
+  --col-complOfMonoc: #2EC0B0;
+  --col-heading: #ffffff;
 }
 
 h1,
@@ -88,6 +105,14 @@ button {
 
 :root {
   --fontFamText: "Mona-Sans";
+  --fontFam: "Neue Haas Grotesk Display Pro";
+  --col-main: #d44d5c;
+  --col-main-light: #d44d5c;
+  --col-sec: #C02E3E;
+  --col-monoc: #C02E3E;
+  --col-compl: #4DD4C5;
+  --col-complOfMonoc: #2EC0B0;
+  --col-heading: #ffffff;
 }
 
 nav {
@@ -161,6 +186,14 @@ header #buttons button {
 
 :root {
   --fontFamText: "Mona-Sans";
+  --fontFam: "Neue Haas Grotesk Display Pro";
+  --col-main: #d44d5c;
+  --col-main-light: #d44d5c;
+  --col-sec: #C02E3E;
+  --col-monoc: #C02E3E;
+  --col-compl: #4DD4C5;
+  --col-complOfMonoc: #2EC0B0;
+  --col-heading: #ffffff;
 }
 
 main section {
@@ -330,11 +363,11 @@ main section h2 {
   grid-template-columns: 1fr 1fr 1fr;
 }
 .contact article {
-  border: px solid silver;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-bottom: 1vh;
 }
 .contact h4, .contact ul, .contact h6 {
   margin-bottom: 1.3vw;
@@ -358,10 +391,10 @@ main section h2 {
 }
 .contact dd {
   margin-bottom: 2.8vw;
-  text-align: center;
   color: #222;
   font-size: 0.875rem;
   font-size: clamp(0.875rem, 0.833vw, 0.833vw);
+  text-align: center;
 }
 .contact dd a {
   font-weight: 600;
@@ -369,47 +402,68 @@ main section h2 {
   letter-spacing: 0.1em;
 }
 .contact form {
-  border: px solid silver;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.contact form label, .contact form input, .contact form textarea {
+.contact form fieldset {
   width: 70%;
+  margin-bottom: 1.6vw;
+}
+.contact form .missing {
+  position: relative;
+}
+.contact form .missing label {
+  color: var(--col-monoc);
+}
+.contact form .missing::after {
+  content: "--required filed--";
+  position: absolute;
+  bottom: -16px;
+  display: block;
+  color: var(--col-monoc);
+  font-size: 12px;
+  text-align: right;
+}
+.contact form .missing::after, .contact form label, .contact form input, .contact form textarea {
+  width: 100%;
   font-family: var(--fontFamText);
 }
 .contact form label {
-  margin-bottom: 0.4vw;
   color: #777;
   font-size: 1rem;
   font-size: clamp(1rem, 0.99vw, 0.99vw);
   font-weight: 900;
+}
+.contact form label span {
+  color: var(--col-monoc);
 }
 .contact form input, .contact form textarea, .contact form button {
   border-radius: 10px;
   letter-spacing: 0.04em;
 }
 .contact form input, .contact form textarea {
-  border: 1px solid #ccc;
+  display: block;
+  position: relative;
+  border: 1px solid #cecece;
   padding: 0.4vw 0.8vw;
+  margin-top: 0.5vh;
   background-color: transparent;
   font-size: 1.125rem;
   line-height: 1.6;
 }
 .contact form input:hover, .contact form textarea:hover {
-  border: 1px solid #bbb;
+  border: 1px solid #bebebe;
 }
 .contact form input:focus, .contact form textarea:focus {
   border: 1px solid #aaa;
 }
 .contact form input {
   min-height: 1em;
-  margin-bottom: 1.4vw;
 }
 .contact form textarea {
   min-height: 2em;
-  margin-bottom: 1.2vw;
 }
 .contact form textarea::placeholder {
   color: #bababa;
@@ -465,6 +519,14 @@ main section h2 {
 }
 :root {
   --fontFamText: "Mona-Sans";
+  --fontFam: "Neue Haas Grotesk Display Pro";
+  --col-main: #d44d5c;
+  --col-main-light: #d44d5c;
+  --col-sec: #C02E3E;
+  --col-monoc: #C02E3E;
+  --col-compl: #4DD4C5;
+  --col-complOfMonoc: #2EC0B0;
+  --col-heading: #ffffff;
 }
 
 footer {
