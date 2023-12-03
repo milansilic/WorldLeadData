@@ -180,17 +180,35 @@ let send = (event)=> {
 
    console.log(document.getElementById('name').value);
 
+   alert('vvv')
+
 }
 
-// function send() {
-//    console.log(this.company);
-// }
 
-function sendMail() {
-   // var link = "silic.milan@gmail.com"
-   //          + "&subject=" + encodeURIComponent("This is my subject")
-   //          + "&body=" + encodeURIComponent(document.getElementById('myText').value)
-   // ;
-   
-   // window.location.href = link;
+
+let sendMail = ()=> {
+   (function() {
+      emailjs.init("zYY-jPsXqa7AYLqbk");
+   })();
+
+   var params = {
+      sender: document.getElementById('email').value,
+      to: "world-lead-data@proton.me",
+      subject: `${document.getElementById('name').value} from ${document.getElementById('company').value}` ,
+      message: document.getElementById('comment').value,
+      replyto: "noreply@gmail.com",
+   }
+
+   var serviceID = "service_vdl4k4h";
+   var templateID = "template_dlz8wki";
+
+   emailjs.send(serviceID, templateID, params)
+   .then( res => {
+      alert("email sent");
+      document.getElementById('name').value = '';
+      document.getElementById('company').value = '';
+      document.getElementById('comment').value = '';
+      document.getElementById('email').value = '';
+   })
+   .catch();
 }

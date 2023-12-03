@@ -223,7 +223,7 @@ main section {
       }
 
       label {
-         margin-bottom: .5vw;
+         margin-bottom: .4vw;
          color: #777;
          font-size: 1rem;
          font-size: clamp(1rem, 0.990vw, 0.990vw);
@@ -254,12 +254,16 @@ main section {
 
       input {
          min-height: 1em;
-         margin-bottom: 2vw;
+         margin-bottom: 1.5vw;
       }
 
       textarea {
          min-height: 2em;
          margin-bottom: 1.2vw;
+      }
+
+      textarea::placeholder {
+         color: #bababa;
       }
 
       button {

@@ -380,7 +380,7 @@ main section h2 {
   font-family: var(--fontFamText);
 }
 .contact form label {
-  margin-bottom: 0.5vw;
+  margin-bottom: 0.4vw;
   color: #777;
   font-size: 1rem;
   font-size: clamp(1rem, 0.99vw, 0.99vw);
@@ -405,11 +405,14 @@ main section h2 {
 }
 .contact form input {
   min-height: 1em;
-  margin-bottom: 2vw;
+  margin-bottom: 1.5vw;
 }
 .contact form textarea {
   min-height: 2em;
   margin-bottom: 1.2vw;
+}
+.contact form textarea::placeholder {
+  color: #bababa;
 }
 .contact form button {
   align-self: flex-end;
