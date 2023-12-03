@@ -142,50 +142,7 @@ const sections = [...document.querySelectorAll('main section')];
 navLis.forEach((el, i) => el.onclick = () => window.scrollTo({ top: sections[i].offsetTop, behavior: "smooth" }))
 
 
-
-
-let name = document.getElementById('name').value;
-let name1 = 'pera';
-
-// let company = document.getElementById('company')
-// let email = document.getElementById('email')
-// let comment = document.getElementById('comment')
-
-// console.log(name1);
-
-// var name = 'aaa'
-// // let name = 'aaa'
-// // let name = 'aaa'
-// let company = 'bbb'
-// let email = 'ccc'
-// let comment = 'eee'
-
-let fullMessage = {
-   // name: this.name,
-   // company: 'djoka',
-   // email: this.email,
-   // comment: this.comment,
-}
-
-let Message = (name, address, email)=> {
-   this.name = name;
-   this.address = address;
-   this.email = email;
-}
-
-let send = (event)=> {
-   // console.log(document.getElementById('name').value);
-   // let newM = new Message(document.getElementById('name').value, document.getElementById('address').value, document.getElementById('email').value)
-
-
-   console.log(document.getElementById('name').value);
-
-   alert('vvv')
-
-}
-
-
-
+// SEND MAIL
 let sendMail = ()=> {
    (function() {
       emailjs.init("zYY-jPsXqa7AYLqbk");
