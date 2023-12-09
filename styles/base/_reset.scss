@@ -9,6 +9,10 @@ body {
    scroll-snap-type: y proximity;
 }
 
+body {
+   width: 100%;
+}
+
 img {
    display: block;
 }
