@@ -5,27 +5,6 @@ h2 {
    text-transform: capitalize;
 }
 
-h1 {
-   color: var(--col-heading);
-   font-size: 4.8vmax;
-
-   @media screen and (min-width: 1280px) {
-      font-size: 3.8vw;
-   }
-
-   @media screen and (min-width: 2160px) {
-      font-size: 2.8vw;
-   }
-}
-
-h2 {
-   color: var(--col-main);
-   font-size: 1.2rem;
-   font-size: clamp(1.2rem, 1.667vw, 1.667vw);
-   text-shadow: 0px 0px 20px #fff;
-   letter-spacing: .05em;
-}
-
 h3,
 h4,
 h6 {
@@ -55,9 +34,11 @@ h6 {
 }
 
 p,
+a,
 li,
 dd,
-button {
+button,
+address {
    color: #000;
    font-family: var(--fontFamText);
 }

@@ -29,6 +29,10 @@ fieldset textarea {
   outline: 0;
 }
 
+a {
+  text-decoration: none;
+}
+
 :root {
   --fontFamText: "Mona-Sans";
   --fontFam: "Neue Haas Grotesk Display Pro";
@@ -39,6 +43,8 @@ fieldset textarea {
   --col-compl: #4DD4C5;
   --col-complOfMonoc: #2EC0B0;
   --col-heading: #ffffff;
+  --col-bg: #f1f1f1;
+  --col-grey:#ddd;
 }
 
 h1,
@@ -46,29 +52,6 @@ h2 {
   font-family: var(--fontFam);
   text-align: center;
   text-transform: capitalize;
-}
-
-h1 {
-  color: var(--col-heading);
-  font-size: 4.8vmax;
-}
-@media screen and (min-width: 1280px) {
-  h1 {
-    font-size: 3.8vw;
-  }
-}
-@media screen and (min-width: 2160px) {
-  h1 {
-    font-size: 2.8vw;
-  }
-}
-
-h2 {
-  color: var(--col-main);
-  font-size: 1.2rem;
-  font-size: clamp(1.2rem, 1.667vw, 1.667vw);
-  text-shadow: 0px 0px 20px #fff;
-  letter-spacing: 0.05em;
 }
 
 h3,
@@ -100,9 +83,11 @@ h6 {
 }
 
 p,
+a,
 li,
 dd,
-button {
+button,
+address {
   color: #000;
   font-family: var(--fontFamText);
 }
@@ -117,6 +102,8 @@ button {
   --col-compl: #4DD4C5;
   --col-complOfMonoc: #2EC0B0;
   --col-heading: #ffffff;
+  --col-bg: #f1f1f1;
+  --col-grey:#ddd;
 }
 
 nav {
@@ -217,6 +204,20 @@ header {
   background-image: linear-gradient(150deg, var(--col-main) 10%, var(--col-main-light) 40%, var(--col-main-light) 60%, var(--col-main) 100%);
   scroll-snap-align: start;
 }
+header h1 {
+  color: var(--col-heading);
+  font-size: 4.8vmax;
+}
+@media screen and (min-width: 1280px) {
+  header h1 {
+    font-size: 3.8vw;
+  }
+}
+@media screen and (min-width: 2160px) {
+  header h1 {
+    font-size: 2.8vw;
+  }
+}
 header h1 br {
   display: none;
 }
@@ -225,6 +226,11 @@ header h1 br {
     display: inline-block;
   }
 }
+header h2 {
+  color: var(--col-grey);
+  font-size: 2.5vmax;
+  letter-spacing: 0.05em;
+}
 header #buttons {
   position: absolute;
   bottom: 0;
@@ -232,6 +238,18 @@ header #buttons {
 }
 header #buttons button {
   cursor: pointer;
+}
+
+@media screen and (orientation: landscape) {
+  .heading-portrait {
+    display: none;
+  }
+}
+
+@media screen and (orientation: portrait) {
+  .heading-landscape {
+    display: none;
+  }
 }
 
 :root {
@@ -244,24 +262,21 @@ header #buttons button {
   --col-compl: #4DD4C5;
   --col-complOfMonoc: #2EC0B0;
   --col-heading: #ffffff;
+  --col-bg: #f1f1f1;
+  --col-grey:#ddd;
 }
 
 main section {
   height: 100vh;
-  background-color: #f1f1f1;
+  background-color: var(--col-bg);
   display: flex;
   flex-direction: column;
   scroll-snap-align: start;
   overflow: hidden;
 }
 main section > div {
-  flex-basis: 83%;
-  overflow: hidden;
-}
-@media screen and (orientation: portrait) and (min-width: 601px) {
-  main section > div {
-    padding-bottom: 2vmin;
-  }
+  flex-basis: 84%;
+  padding-bottom: 1vh;
 }
 @media screen and (orientation: portrait) and (min-width: 601px) {
   main section > div {
@@ -275,6 +290,11 @@ main section > div {
 }
 main section h2 {
   margin-top: auto;
+  color: var(--col-main);
+  font-size: 1.2rem;
+  font-size: clamp(1.2rem, 1.667vw, 1.667vw);
+  letter-spacing: 0.05em;
+  text-shadow: 0px 0px 20px #fff;
 }
 
 .about-us article,
@@ -357,7 +377,6 @@ main section h2 {
   }
 }
 .about-us p span {
-  color: var(--col-compl);
   color: var(--col-complOfMonoc);
   font-family: var(--fontFamText);
   font-size: 0.938rem;
@@ -372,7 +391,7 @@ main section h2 {
   justify-content: center;
   align-content: center;
 }
-@media screen and (min-width: 768px) and (orientation: portrait) {
+@media screen and (min-width: 768px) {
   .services {
     gap: 4vh 0;
     padding: 0 0 2vw 5vw;
@@ -386,12 +405,11 @@ main section h2 {
   }
 }
 .services article {
-  border: px solid red;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
 }
-@media screen and (min-width: 768px) and (orientation: portrait) {
+@media screen and (min-width: 768px) {
   .services article:nth-of-type(1) {
     padding-left: 0;
   }
@@ -432,14 +450,10 @@ main section h2 {
   transition-delay: 0.62s;
 }
 .services hgroup {
-  border: px solid green;
   display: flex;
   align-items: center;
   padding-left: 0.6rem;
   margin-bottom: 0.6vh;
-}
-.services hgroup > * {
-  border: px solid red;
 }
 @media screen and (min-width: 768px) {
   .services hgroup {
@@ -465,12 +479,10 @@ main section h2 {
   margin-right: 1.8vmax;
 }
 .services hgroup h3 {
-  border: px solid goldenrod;
   color: var(--col-main);
   text-decoration: underline;
 }
 .services li {
-  border: px solid dodgerblue;
   font-size: 0.875rem;
   font-size: clamp(0.875rem, 1.042vw, 1.042vw);
   line-height: 1.8em;
@@ -478,16 +490,66 @@ main section h2 {
 }
 
 .contact {
-  border: px solid teal;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: flex;
+}
+@media screen and (orientation: portrait) {
+  .contact {
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
 }
 .contact article {
-  border: px solid goldenrod;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.contact .contact-info-main {
+  display: none;
+}
+@media screen and (orientation: landscape) and (min-width: 1366px) {
+  .contact .contact-info-main {
+    display: flex;
+  }
+}
+.contact .contact-info-main img {
+  width: 2vw;
+  margin-bottom: 1vw;
+}
+.contact .contact-info-main a, .contact .contact-info-main address {
+  margin-bottom: 2.8vw;
+  text-align: center;
+  color: #222;
+  font-size: 0.875rem;
+  font-size: clamp(0.875rem, 0.833vw, 0.833vw);
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: 0.1em;
+}
+@media screen and (orientation: portrait) {
+  .contact .form {
+    order: 2;
+  }
+}
+.contact .teaser h4,
+.contact .teaser h6 {
+  display: none;
+}
+@media screen and (min-width: 375px) and (min-height: 800px) {
+  .contact .teaser h4 {
+    display: block;
+  }
+}
+@media screen and (min-width: 768px) {
+  .contact .teaser h6 {
+    display: block;
+  }
+}
+@media screen and (orientation: portrait) {
+  .contact .teaser h6 figure {
+    transform: rotate(90deg);
+  }
 }
 .contact h4,
 .contact ul,
@@ -502,36 +564,33 @@ main section h2 {
 .contact h4 span {
   text-transform: lowercase;
 }
-.contact dl {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.contact dt img {
-  width: 2vw;
-  margin-bottom: 1vw;
-}
-.contact dd {
-  margin-bottom: 2.8vw;
-  color: #222;
-  font-size: 0.875rem;
-  font-size: clamp(0.875rem, 0.833vw, 0.833vw);
-  text-align: center;
-}
-.contact dd a {
-  font-weight: 600;
-  color: #222;
-  letter-spacing: 0.1em;
-}
 .contact form {
-  width: 100%;
+  width: 86%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+}
+@media screen and (min-width: 480px) {
+  .contact form {
+    width: 75%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .contact form {
+    width: 50%;
+  }
+}
+@media screen and (orientation: landscape) {
+  .contact form {
+    width: 70%;
+  }
 }
 .contact form fieldset {
-  width: 70%;
-  margin-bottom: 1.6vw;
+  margin-bottom: 2vh;
+}
+@media screen and (orientation: landscape) {
+  .contact form fieldset {
+    margin-bottom: 1.6vw;
+  }
 }
 .contact form .missing {
   position: relative;
@@ -575,8 +634,8 @@ main section h2 {
   display: block;
   position: relative;
   border: 1px solid #cecece;
-  padding: 0.4vw 0.8vw;
-  margin-top: 0.5vh;
+  padding: 0.5vmax 0.8vmax;
+  margin-top: 0.3vmax;
   background-color: transparent;
   font-size: 1.125rem;
   line-height: 1.6;
@@ -601,17 +660,16 @@ main section h2 {
 .contact form button {
   align-self: flex-end;
   border: none;
-  padding: 0.7vw 1.2vw 0.73vw;
-  margin-right: 15%;
+  padding: 0.75vmax 1.2vmax 0.77vmax;
   background-color: var(--col-main);
   color: #fff;
   font-weight: 900;
   cursor: pointer;
 }
 .contact li {
-  font-size: 1rem;
-  font-size: clamp(1rem, 0.938vw, 0.938vw);
-  margin-bottom: 1.2vw;
+  font-size: 0.875rem;
+  font-size: clamp(0.875rem, 0.938vw, 0.938vw);
+  margin-bottom: 1.2vmax;
 }
 .contact li span {
   color: var(--col-monoc);
@@ -652,32 +710,83 @@ main section h2 {
   --col-compl: #4DD4C5;
   --col-complOfMonoc: #2EC0B0;
   --col-heading: #ffffff;
+  --col-bg: #f1f1f1;
+  --col-grey:#ddd;
 }
 
 footer {
-  scroll-snap-align: start;
+  height: 100vh;
   background-color: var(--col-main);
+  padding: 8vh 0 0;
+  scroll-snap-align: start;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
-  padding: 16vh 0 12vh;
+}
+@media screen and (min-width: 480px) {
+  footer {
+    padding: 10vh 0 2vh;
+  }
+}
+@media screen and (orientation: landscape) and (min-width: 1366px) {
+  footer {
+    height: 80vh;
+    padding: 0;
+  }
 }
 footer p {
-  border: px solid yellow;
-  max-width: 50ch;
-  margin-bottom: 15vh;
+  width: 50ch;
+  max-width: 86%;
   color: #fff;
   font-family: var(--fontFamText);
-  font-size: 1.125rem;
-  font-size: clamp(1.125rem, 1.354vw, 1.354vw);
+  font-size: 1.063rem;
+  font-size: clamp(1.063rem, 2vw, 1.563rem);
   font-style: italic;
   word-spacing: 0.1em;
-  line-height: 1.5;
+  line-height: 1.6em;
+}
+footer .contact-info-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (orientation: landscape) and (min-width: 1366px) {
+  footer .contact-info-footer {
+    display: none;
+  }
+}
+footer .contact-info-footer figure {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: #fff;
+  padding: 3%;
+  margin-bottom: 0.8vmax;
+}
+footer .contact-info-footer figure img {
+  width: 100%;
+}
+footer .contact-info-footer a {
+  margin-bottom: 2vmax;
+}
+footer .contact-info-footer a,
+footer .contact-info-footer address {
+  text-align: center;
+  color: var(--col-bg);
+  color: #fff;
+  font-size: 0.875rem;
+  font-size: clamp(0.875rem, 0.833vw, 0.833vw);
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: 0.1em;
 }
 footer small {
-  border: px solid green;
   color: #fff;
+  text-align: center;
   font-family: "Mona-Sans";
+  line-height: 1.6;
+  text-transform: capitalize;
 }/*# sourceMappingURL=style.css.map */
